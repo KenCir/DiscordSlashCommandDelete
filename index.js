@@ -17,7 +17,7 @@ client.on('ready', async () => {
 });
 
 client.on('rateLimit', rateLimitData => {
-    console.log(`レート制限\n時刻: ${Date.now()}\nHTTPメゾット: ${rateLimitData.method}\nHTTPリクエストルート: ${rateLimitData.route}\nHTTPリクエストパス${rateLimitData.path}\nタイムアウト: ${ms(rateLimitData.timeout)}\nリクエスト最大数: ${rateLimitData.limit}\nグローバル: ${rateLimitData.global ? 'はい' : 'いいえ'}`)
+    console.log(`レート制限\n時刻: ${(new Date()).toLocaleString('ja-JP')}\nHTTPメゾット: ${rateLimitData.method}\nHTTPリクエストルート: ${rateLimitData.route}\nHTTPリクエストパス${rateLimitData.path}\nタイムアウト: ${ms(rateLimitData.timeout)}\nリクエスト最大数: ${rateLimitData.limit}\nグローバル: ${rateLimitData.global ? 'はい' : 'いいえ'}`)
 });
 
 client.login(process.argv[2]);
