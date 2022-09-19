@@ -5,6 +5,7 @@ const client = new Client({
 });
 
 client.on('ready', async () => {
+    console.log(`Login ${client.user.tag}`);
     console.log('ギルドコマンド削除開始');
 
     await client.guilds.fetch();
@@ -14,6 +15,13 @@ client.on('ready', async () => {
             await command.delete();
         });
     });
+
+    /*
+    await client.application.commands.fetch();
+    client.application.commands.cache.forEach(async command => {
+        await command.delete();
+    });
+    */
 });
 
 client.on('rateLimit', rateLimitData => {
